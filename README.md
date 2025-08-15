@@ -60,3 +60,37 @@ export default openaiConfig;
   console.log("Uploaded file:", res);
 })();
 ```
+
+### Querying file
+
+```js
+(async function () {
+  const res = await openai.files.retrieve("file-ULCZv4pMbtvAWMLKgxJatz");
+  console.log(res);
+})();
+```
+
+### List files
+
+```js
+import openai from "./openaiConfig.js";
+
+(async function () {
+  const res = await openai.files.list({
+    purpose: "assistants",
+  });
+  console.log("Files list:", res);
+})();
+```
+
+### Delete file
+
+```js
+import openai from "./openaiConfig.js";
+
+(async function () {
+  const res = await openai.files.delete("file-ULCZv4pMbtvAWMLKgxJatz");
+  console.log("File deleted:", res);
+})();
+
+```

@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "upload": "node uploadFile.js"
+    "uploadFile": "node uploadFile.js",
+    "listFile": "node listFile.js",
+    "listFiles": "node listFiles.js",
+    "deleteFile": "node deleteFile"
   },
   "keywords": [],
   "author": "Mario Lazzari",
