@@ -26,4 +26,37 @@ Helps you to handle large files operations.
 
 ### Developemnt enviroment
 
+```sh
+pnpm init
+pnpm add openai
+pnpm add dotenv
+```
 
+```js
+import OpenAI from "openai";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const openaiConfig = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export default openaiConfig;
+```
+
+### Uploading file
+
+```js
+(async function () {
+  const fileName = join(__dirname, "files", "assistant_queries.txt");
+  const file = createReadStream(fileName);
+
+  const res = await openai.files.create({
+    file,
+    purpose: "assistants",
+  });
+
+  console.log("Uploaded file:", res);
+})();
+```
